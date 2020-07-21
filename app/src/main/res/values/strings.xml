@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Flickr Dunzo</string>
+    <string name="error_unable_fetch_data">Unable to fetch data</string>
+    <string name="error_invalid_data">Please enter valid query</string>
+    <string name="search_hint">Search Photos</string>
+    <string name="btn_search">SEARCH</string>
+</resources>
