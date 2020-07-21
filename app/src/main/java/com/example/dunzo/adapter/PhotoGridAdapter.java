@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -12,6 +13,8 @@ import com.google.android.flexbox.FlexboxLayoutManager;
 import com.example.dunzo.R;
 import com.example.dunzo.adapter.viewholder.PhotoGridViewHolder;
 import com.example.dunzo.model.PhotoListModel;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -45,19 +48,9 @@ public class PhotoGridAdapter extends RecyclerView.Adapter<PhotoGridViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull PhotoGridViewHolder photoGridViewHolder, int i) {
-        ImageView imageView = (ImageView) photoGridViewHolder.itemView;
-        FlexboxLayoutManager.LayoutParams layoutParams = (FlexboxLayoutManager.LayoutParams) imageView.getLayoutParams();
-        //This is just a basic logic to show differently sized images using the Flexbox layout
-        if (i % 2 == 0) {
-            layoutParams.setWidth(350);
-        } else {
-            layoutParams.setWidth(450);
-        }
-        Glide.with(photoGridViewHolder.itemView.getContext())
-                .load(mPhotos.get(i).getUrl())
-                .diskCacheStrategy(DiskCacheStrategy.DATA)
-                .into(imageView);
+        ((PhotoGridViewHolder)photoGridViewHolder).bindData(getItemByPosition(i));
     }
+
 
     @Override
     public int getItemCount() {

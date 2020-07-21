@@ -12,7 +12,7 @@ public class ResponseToDao {
     public static Photo toDao(PhotoResponseModel photoResponseModel) {
         Photo photo = null;
         if (photoResponseModel != null) {
-            photo = new Photo(photoResponseModel.getId(), getFlickrPhotoUrl(photoResponseModel));
+            photo = new Photo(photoResponseModel.getId(), getFlickrPhotoUrl(photoResponseModel), photoResponseModel.getTitle());
         }
 
         return photo;

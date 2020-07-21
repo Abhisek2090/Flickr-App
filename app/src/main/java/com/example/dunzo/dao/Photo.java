@@ -18,9 +18,13 @@ public class Photo {
     @ColumnInfo(name = "PhotoUrl")
     private String photoUrl;
 
-    public Photo(String photoId, String photoUrl) {
+    @ColumnInfo(name = "PhotoTitle")
+    private String photoTitle;
+
+    public Photo(String photoId, String photoUrl, String photoTitle) {
         this.photoId = photoId;
         this.photoUrl = photoUrl;
+        this.photoTitle = photoTitle;
     }
 
     public String getPhotoId() {
@@ -39,15 +43,11 @@ public class Photo {
         this.autoId = autoId;
     }
 
-// --Commented out by Inspection START (21/7/20 9:27 PM):
-//    public void setPhotoId(String photoId) {
-//        this.photoId = photoId;
-//    }
-// --Commented out by Inspection STOP (21/7/20 9:27 PM)
+    public String getPhotoTitle() {
+        return photoTitle;
+    }
 
-// --Commented out by Inspection START (21/7/20 9:27 PM):
-//    public void setPhotoUrl(String photoUrl) {
-//        this.photoUrl = photoUrl;
-//    }
-// --Commented out by Inspection STOP (21/7/20 9:27 PM)
+    public void setPhotoTitle(String photoTitle) {
+        this.photoTitle = photoTitle;
+    }
 }

@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import com.example.dunzo.dao.Photo;
 import com.example.dunzo.model.PhotoListModel;
 
-public class DaoToUi {
+public class DaoUI {
 
     @Nullable
     public static PhotoListModel toUi(Photo photo) {
@@ -13,7 +13,7 @@ public class DaoToUi {
         if (photo != null) {
             photoListModel = new PhotoListModel();
             photoListModel.setUrl(photo.getPhotoUrl());
-            photoListModel.setId(photo.getPhotoId());
+            photoListModel.setTitle(photo.getPhotoTitle());
         }
 
         return photoListModel;

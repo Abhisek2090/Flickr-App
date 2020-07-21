@@ -10,7 +10,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.example.dunzo.common.DaoManager;
-import com.example.dunzo.common.DaoToUi;
+import com.example.dunzo.common.DaoUI;
 import com.example.dunzo.common.ResultCallbackListener;
 import com.example.dunzo.common.enums.ErrorEnum;
 import com.example.dunzo.dao.Photo;
@@ -140,7 +140,7 @@ public class MainViewModel extends AndroidViewModel {
                     if (photos != null && !photos.isEmpty()) {
                         List<PhotoListModel> photoListModels = new ArrayList<>();
                         for (Photo daoItem : photos) {
-                            photoListModels.add(DaoToUi.toUi(daoItem));
+                            photoListModels.add(DaoUI.toUi(daoItem));
                         }
 
                         setPhotos(photoListModels);
@@ -170,7 +170,7 @@ public class MainViewModel extends AndroidViewModel {
         } else {
             List<PhotoListModel> photoListModels = new ArrayList<>();
             for (Photo daoItem : daoPhotos) {
-                photoListModels.add(DaoToUi.toUi(daoItem));
+                photoListModels.add(DaoUI.toUi(daoItem));
             }
             Log.d(LOGGER_TAG, "Fetched rows from db " + photoListModels.size());
             setPhotos(photoListModels);

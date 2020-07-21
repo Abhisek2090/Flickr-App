@@ -10,9 +10,9 @@ public class FlickrRootResponseModel {
         return mPhotosResponseModel;
     }
 
-// --Commented out by Inspection START (21/7/20 9:27 PM):
-//    public void setPhotosResponseModel(PhotosResponseModel photosResponseModel) {
-//        this.mPhotosResponseModel = photosResponseModel;
-//    }
-// --Commented out by Inspection STOP (21/7/20 9:27 PM)
+
+    public void setPhotosResponseModel(PhotosResponseModel photosResponseModel) {
+        this.mPhotosResponseModel = photosResponseModel;
+    }
+
 }

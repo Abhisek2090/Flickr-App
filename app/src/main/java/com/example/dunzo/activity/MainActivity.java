@@ -9,6 +9,7 @@ import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean mIgnoreFetching = false;
     private ProgressBar mProgressBar = null;
     private EditText mEtSearchString;
+    private LinearLayoutManager layoutManager;
 
     private Runnable mResetFetchingFlag = new Runnable() {
         @Override
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 
         mMainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 
         mProgressBar = findViewById(R.id.progress);
         Button searchButton = findViewById(R.id.btn_search);

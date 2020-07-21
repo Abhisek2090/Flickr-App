@@ -3,7 +3,7 @@ package com.example.dunzo.model;
 
 public class PhotoListModel {
     private String mUrl;
-    private String mId;
+    private String title;
 
     public String getUrl() {
         return mUrl;
@@ -13,11 +13,12 @@ public class PhotoListModel {
         mUrl = url;
     }
 
-    public String getId() {
-        return mId;
+
+    public String getTitle() {
+        return title;
     }
 
-    public void setId(String id) {
-        mId = id;
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
